@@ -7,6 +7,6 @@ import { typeORMConfig } from './configs/typeorm.config';
   imports: [
 	TypeOrmModule.forRoot(typeORMConfig),
 	BoardsModule],
-	
 })
+
 export class AppModule {}
