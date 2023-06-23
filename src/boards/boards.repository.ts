@@ -21,4 +21,5 @@ export class BoardRepository extends Repository<Board> {
 		await this.save(board);
 		return board;
 	}
+
 }
