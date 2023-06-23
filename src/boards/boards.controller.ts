@@ -38,6 +38,14 @@ export class BoardsController {
 		return this.boardsService.deleteBoard(id);
 	}
 
+	@Patch('/:id/status')
+	updateBoardStatus(
+		@Param('id', ParseIntPipe) id: number,
+		@Body('status', BoardStatusValidationPipe) status: BoardStatus
+	): Promise<Board> {
+		return this.boardsService.updateBoardStatus(id, status);
+	}
+
 	// @Get('/:id')
 	// getBoardById(@Param('id') id: string): Board {
 	// 	return this.boardsService.getBoardById(id);
