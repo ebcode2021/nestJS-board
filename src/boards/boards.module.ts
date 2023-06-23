@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeOrmExModule } from 'src/typeorm-ex/typeorm-ex.module';
 import { BoardsController } from './boards.controller';
+import { BoardRepository } from './boards.repository';
 import { BoardsService } from './boards.service';
 
 @Module({
@@ -9,6 +10,6 @@ import { BoardsService } from './boards.service';
    TypeOrmModule.forFeature([TypeOrmExModule.forCustomRepository])
   ],
   controllers: [BoardsController],
-  providers: [BoardsService]
+  providers: [BoardsService, BoardRepository]
 })
 export class BoardsModule {}
